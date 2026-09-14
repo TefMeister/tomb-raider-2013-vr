@@ -1,0 +1,154 @@
+.?AVCommonRenderDevice@cdc@@
+.?AVIPCDeviceManager@cdc@@
+.?AVIPCRenderDevice@cdc@@
+.?AVPCDX11AlphaBloomFSXPassCallbacks@cdc@@
+.?AVPCDX11AsyncCreateResource@cdc@@
+.?AVPCDX11BaseTexture@cdc@@
+.?AVPCDX11BitmapTexture@cdc@@
+.?AVPCDX11ClearDrawable@cdc@@
+.?AVPCDX11CompositePassCallbacks@cdc@@
+.?AVPCDX11ComputeShader@cdc@@
+.?AVPCDX11ComputeShaderTable@cdc@@
+.?AVPCDX11ConstantBuffer@cdc@@
+.?AVPCDX11DecalApplyPassCallbacks@cdc@@
+.?AVPCDX11DecalNormalPassCallbacks@cdc@@
+.?AVPCDX11DefaultRenderTarget@cdc@@
+.?AVPCDX11DeferredShadingPassCallbacks@cdc@@
+.?AVPCDX11DeferredUpdate@cdc@@
+.?AVPCDX11DepthBuffer@cdc@@
+.?AVPCDX11DepthDependentPassCallbacks@cdc@@
+.?AVPCDX11DepthPassCallbacks@cdc@@
+.?AVPCDX11DeviceManager@cdc@@
+.?AVPCDX11DomainShader@cdc@@
+.?AVPCDX11DomainShaderTable@cdc@@
+.?AVPCDX11DynamicConstantBuffer@cdc@@
+.?AVPCDX11DynamicIndexBuffer@cdc@@
+.?AVPCDX11DynamicVertexBuffer@cdc@@
+.?AVPCDX11ExternalIndexBuffer@cdc@@
+.?AVPCDX11ExternalVertexBuffer@cdc@@
+.?AVPCDX11FullScreenFXPassCallbacks@cdc@@
+.?AVPCDX11GeometryShader@cdc@@
+.?AVPCDX11GeometryShaderTable@cdc@@
+.?AVPCDX11HairApplicationDrawable@cdc@@
+.?AVPCDX11HairComputeDrawable@cdc@@
+.?AVPCDX11HairDrawable@cdc@@
+.?AVPCDX11HairShadowDrawable@cdc@@
+.?AVPCDX11HeapDepthBuffer@cdc@@
+.?AVPCDX11HeapRenderTarget@cdc@@
+.?AVPCDX11HullShader@cdc@@
+.?AVPCDX11HullShaderTable@cdc@@
+.?AVPCDX11IndexBuffer@cdc@@
+.?AVPCDX11InternalResource@cdc@@
+.?AVPCDX11LightManager@cdc@@
+.?AVPCDX11LightResource@cdc@@
+.?AVPCDX11Material@cdc@@
+.?AVPCDX11MatrixState@cdc@@
+.?AVPCDX11ModelDrawable@cdc@@
+.?AVPCDX11NGAPrimitive@cdc@@
+.?AVPCDX11NormalPassCallbacks@cdc@@
+.?AVPCDX11PixelShader@cdc@@
+.?AVPCDX11PixelShaderTable@cdc@@
+.?AVPCDX11Pool@cdc@@
+.?AVPCDX11PostFSXPassCallbacks@cdc@@
+.?AVPCDX11PreTranslucentDepthPassCallbacks@cdc@@
+.?AVPCDX11PredatorPassCallbacks@cdc@@
+.?AVPCDX11ProceduralTexture@cdc@@
+.?AVPCDX11RenderBuffer@cdc@@
+.?AVPCDX11RenderContext@cdc@@
+.?AVPCDX11RenderDevice@cdc@@
+.?AVPCDX11RenderExternalResource@cdc@@
+.?AVPCDX11RenderImage@cdc@@
+.?AVPCDX11RenderIndexBuffer@cdc@@
+.?AVPCDX11RenderLight@cdc@@
+.?AVPCDX11RenderModel@cdc@@
+.?AVPCDX11RenderModelInstance@cdc@@
+.?AVPCDX11RenderTarget@cdc@@
+.?AVPCDX11RenderTerrain@cdc@@
+.?AVPCDX11RenderTexture@cdc@@
+.?AVPCDX11RenderVertexBuffer@cdc@@
+.?AVPCDX11Scene@cdc@@
+.?AVPCDX11SetRTDrawable@cdc@@
+.?AVPCDX11ShaderLib@cdc@@
+.?AVPCDX11ShaderManager@cdc@@
+.?AVPCDX11ShaderTable@cdc@@
+.?AVPCDX11SimpleDynamicVertexBuffer@cdc@@
+.?AVPCDX11SimpleStaticIndexBuffer@cdc@@
+.?AVPCDX11SimpleStaticVertexBuffer@cdc@@
+.?AVPCDX11StateManager@cdc@@
+.?AVPCDX11StaticConstantBuffer@cdc@@
+.?AVPCDX11StaticIndexBuffer@cdc@@
+.?AVPCDX11StaticPool@cdc@@
+.?AVPCDX11StaticVertexBuffer@cdc@@
+.?AVPCDX11StreamDecl@cdc@@
+.?AVPCDX11SubFrameRenderTarget@cdc@@
+.?AVPCDX11TerrainDrawable@cdc@@
+.?AVPCDX11Texture@cdc@@
+.?AVPCDX11TextureUpdateCallback@cdc@@
+.?AVPCDX11TranslucentPassCallbacks@cdc@@
+.?AVPCDX11UberConstantBuffer@cdc@@
+.?AVPCDX11VertexBuffer@cdc@@
+.?AVPCDX11VertexShader@cdc@@
+.?AVPCDX11VertexShaderTable@cdc@@
+.?AVPCDX11WaterSurface@cdc@@
+.?AVPCDeviceManager@cdc@@
+.?AVPCExternalRenderContext@?1??CreateRenderContext@PCRenderDevice@cdc@@UAEPAVPCRenderContext@3@PAUHWND__@@II_N@Z@
+.?AVPCRenderDevice@cdc@@
+.?AVRenderDevice@cdc@@
+9,PCDX11DeviceManager: CreateDevice() failed. Invalid adapter id.
+Constantbuffer pool
+Corrupt mesh data passed into PCDX11RenderMesh constructor!
+Corrupt texture data passed into PCDX11Texture constructor!
+Dcdc::PCDX11HairData::InitConstantData(1): ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+ERROR: (PCDeviceManager) CreateDevice() failed.
+ERROR: (PCDeviceManager) Settings failed to validate.
+GlobalConstantBuffer
+PCDX11-DEV
+PCDX11BufferPool::AllocateBuffer: ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+PCDX11PixelShader has SM5, but only SM4 is supported, skipping creation.
+PCDX11RenderContext::Resize no change
+PCDX11RenderContext::Resize(%d, %d, %s)
+PCDX11RenderDevice: Internal heap is out of memory!
+PCDX11VertexShader has SM5, but only SM4 is supported, skipping creation.
+PCDeviceManager: - Driver management disabled
+PCDeviceManager: - FPU preserve
+PCDeviceManager: - Hardware vertex processing
+PCDeviceManager: - Pure device
+PCDeviceManager: Behavior flags:
+PCDeviceManager: CreateDevice failed. Invalid fullscreen mode id.
+PCDeviceManager: CreateDevice() failed. Could not create Direct3D device.
+PCDeviceManager: CreateDevice() failed. Could not query device caps.
+PCDeviceManager: CreateDevice() failed. Invalid adapter id.
+PCDeviceManager: CreateDevice() failed. No Direct3D object (probably need to update drivers!)
+PCRenderDevice: Internal heap is out of memory!
+RenderDevice
+[Render] PCDX11DeviceManager constructor end
+[Render] PCDX11DeviceManager has no adapters!
+[Render] PCDX11DeviceManager has no adapters! Init failed!
+[Render] PCDX11DeviceManager::Init Validate Settings failed
+[Render] PCDX11DeviceManager::ValidateSettings : Adapter out of range
+[Render] PCDX11DeviceManager::ValidateSettings : Invalidate multiSampleCount
+[Render] PCDX11DeviceManager::ValidateSettings : Output out of range
+[Render] PCDX11DeviceManager::ValidateSettings : ValidateDisplayMode failed
+[Render] PCDeviceManager constructor end
+[Render] PCDeviceManager constructor start
+cdc::PCDX11BitmapTexture::MapImmediate map failure.
+cdc::PCDX11DynamicConstantBuffer::Map map failure.
+cdc::PCDX11HairData::InitConstantData(2): ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11HairData::InitConstantData(3): ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11HairData::InitVolatileData(1): ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11HairData::InitVolatileData(2): ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11Pool::Alloc: ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11Pool::UpdateAllBuffers map failure. This will crash.
+cdc::PCDX11Pool::UpdateAllBuffers: ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11SimpleDynamicVertexBuffer::PCDX11SimpleDynamicVertexBuffer: ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11SimpleStaticIndexBuffer::PCDX11SimpleStaticIndexBuffer: ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11SimpleStaticVertexBuffer::PCDX11SimpleStaticVertexBuffer: ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11StaticConstantBuffer::ASyncCreate: ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11StaticPool::Alloc: ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11UberConstantBuffer::AllocBuffers: ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11UberConstantBuffer::Update map failure. This will crash.
+cdc::PCDX11WaveParticles::Update map failed. This will crash.
+cdc::PCDX11WaveParticles::Update(1): ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11WaveParticles::Update(2): ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+cdc::PCDX11WaveParticles::Update(3): ID3D11Device::CreateBuffer failed with HRESULT 0x%08x (BindFlags=%d, ByteWidth=%d)
+i[Render] PCDX11DeviceManager constructor start

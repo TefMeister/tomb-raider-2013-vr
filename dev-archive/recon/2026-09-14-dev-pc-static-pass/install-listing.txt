@@ -1,0 +1,27 @@
+DLC
+EOSSDK-Win32-Shipping.dll
+EmptySteamDepot
+Survival Edition Content
+TombRaider.exe
+benchmark_mode.docx
+bigfile.000.tiger
+bigfile.001.tiger
+bigfile.002.tiger
+bigfile.003.tiger
+bigfile_ENGLISH.000.tiger
+bigfile_JAPANESE.000.tiger
+binkw32.dll
+jcontent.000.tiger
+jcontent_ENGLISH.000.tiger
+jcontent_JAPANESE.000.tiger
+movies
+msvcp140.dll
+patch.000.tiger
+patch2.000.tiger
+patch2_ENGLISH.000.tiger
+patch3.000.tiger
+patch_ENGLISH.000.tiger
+steam_api.dll
+title.000.tiger
+title_ENGLISH.000.tiger
+vcruntime140.dll

@@ -1,0 +1,50 @@
+======================================================================
+D:/Program Files (x86)/Steam/steamapps/common/Tomb Raider/TombRaider.exe
+  bits=32  linked=2022-09-22T22:26:02  imagebase=0x400000
+  ASLR(DYNAMIC_BASE)=yes  NX=yes  relocs_stripped=no
+  sections:
+    .text      vaddr=    0x1000 vsize=   9777659 rawsize=   9777664 chars=0x60000020
+    .rdata     vaddr=  0x955000 vsize=    751268 rawsize=    751616 chars=0x40000040
+    .data      vaddr=  0xa0d000 vsize=  24118492 rawsize=   4792320 chars=0xc0000040
+    .shad      vaddr= 0x210e000 vsize=    649504 rawsize=    649728 chars=0x60000040
+    .tls       vaddr= 0x21ad000 vsize=     33005 rawsize=     33280 chars=0xc0000040
+    .gfids     vaddr= 0x21b6000 vsize=      3760 rawsize=      4096 chars=0x40000040
+    _RDATA     vaddr= 0x21b7000 vsize=     34864 rawsize=     35328 chars=0x40000040
+    CPADinfo   vaddr= 0x21c0000 vsize=        40 rawsize=       512 chars=0xc0000040
+    .rsrc      vaddr= 0x21c1000 vsize=   2683128 rawsize=   2683392 chars=0x40000040
+    .reloc     vaddr= 0x2451000 vsize=    461128 rawsize=    461312 chars=0x42000040
+  imports:
+    KERNEL32.dll                 ( 167) FindNextFileW, RemoveDirectoryW, FindFirstFileExW, CreateTimerQueue, UnregisterWaitEx, QueryDepthSList
+    USER32.dll                   ( 104) IsIconic, RegisterClassExW, DrawTextW, UpdateWindow, SetActiveWindow, ReleaseDC
+    GDI32.dll                    (  16) SetTextColor, SetStretchBltMode, StretchBlt, SetBkMode, SelectObject, DeleteObject
+    ADVAPI32.dll                 (  20) SystemFunction036, GetUserNameW, RegOpenKeyA, RegEnumKeyA, CryptGenRandom, CryptReleaseContext
+    ole32.dll                    (   9) CoCreateInstance, CoInitialize, CoSetProxyBlanket, CLSIDFromString, PropVariantClear, CoTaskMemFree
+    OLEAUT32.dll                 (   4) VariantInit, VariantClear, SysFreeString, SysAllocString
+    WS2_32.dll                   (  29) recvfrom, recv, listen, inet_ntoa, select, inet_addr
+    binkw32.dll                  (  13) _BinkCopyToBuffer@28, _BinkOpenDirectSound@4, _BinkWait@4, _BinkNextFrame@4, _BinkSetVolume@12, _BinkDoFrame@4
+    steam_api.dll                (  15) SteamAPI_SetMiniDumpComment, SteamAPI_WriteMiniDump, SteamAPI_Init, SteamAPI_Shutdown, SteamAPI_RegisterCallResult, SteamAPI_UnregisterCallResult
+    EOSSDK-Win32-Shipping.dll    ( 108) _EOS_LobbySearch_SetParameter@8, _EOS_LobbySearch_SetLobbyId@8, _EOS_LobbySearch_Find@16, _EOS_LobbyDetails_GetMemberByIndex@8, _EOS_LobbyDetails_GetMemberCount@8, _EOS_LobbyDetails_CopyInfo@12
+    WINMM.dll                    (  28) waveInGetNumDevs, waveOutOpen, waveOutGetDevCapsW, waveOutGetDevCapsA, timeGetTime, waveInGetDevCapsW
+    dbghelp.dll                  (  12) StackWalk64, SymSetOptions, SymGetOptions, SymFunctionTableAccess64, SymGetModuleInfo64, SymGetModuleBase64
+    faultrep.dll                 (   1) ReportFault
+    WININET.dll                  (   9) InternetGetConnectedState, HttpSendRequestW, InternetOpenA, HttpOpenRequestA, InternetCloseHandle, InternetOpenUrlA
+    SHELL32.dll                  (   4) SHAppBarMessage, ShellExecuteW, SHGetFolderPathW, SHCreateDirectoryExW
+    SHLWAPI.dll                  (   1) SHRegGetUSValueA
+    VERSION.dll                  (   3) GetFileVersionInfoW, GetFileVersionInfoSizeW, VerQueryValueW
+    CRYPT32.dll                  (   7) CertFreeCertificateChain, CertGetCertificateChain, CertAddEncodedCertificateToStore, CertFreeCertificateContext, CertCreateCertificateContext, CertOpenStore
+    VCRUNTIME140.dll             (  27) __RTDynamicCast, _except_handler4_common, __vcrt_InitializeCriticalSectionEx, __uncaught_exception, memcmp, __std_exception_destroy
+    api-ms-win-crt-stdio-l1-1-0.dll (  26) __stdio_common_vsprintf, fwrite, _dup2, ftell, fseek, fread
+    api-ms-win-crt-runtime-l1-1-0.dll (  29) _beginthreadex, terminate, exit, abort, _initterm_e, _control87
+    api-ms-win-crt-string-l1-1-0.dll (  30) _stricmp, strncat, strncmp, _strnicmp, strncpy, _strlwr
+    api-ms-win-crt-heap-l1-1-0.dll (   9) _realloc_base, malloc, calloc, realloc, _free_base, _malloc_base
+    api-ms-win-crt-convert-l1-1-0.dll (  13) _strtoui64, atol, strtof, atof, strtod, strtol
+    api-ms-win-crt-time-l1-1-0.dll (  13) clock, _time64, _ftime64_s, _mktime64, _ftime64, _Getdays
+    api-ms-win-crt-filesystem-l1-1-0.dll (   2) _fullpath, _wstat64
+    api-ms-win-crt-math-l1-1-0.dll (  32) _CIpow, ldexp, ceil, frexp, __libm_sse2_powf, __libm_sse2_logf
+    api-ms-win-crt-utility-l1-1-0.dll (   3) qsort, rand, srand
+    api-ms-win-crt-environment-l1-1-0.dll (   1) getenv
+    api-ms-win-crt-locale-l1-1-0.dll (  10) ___lc_codepage_func, ___lc_collate_cp_func, ___lc_locale_name_func, ___mb_cur_max_func, _unlock_locales, _lock_locales
+    api-ms-win-crt-multibyte-l1-1-0.dll (   1) _ismbblead
+    COMDLG32.dll                 (   1) GetSaveFileNameW
+    MSACM32.dll                  (   6) acmStreamOpen, acmStreamSize, acmFormatSuggest, acmStreamConvert, acmStreamPrepareHeader, acmStreamUnprepareHeader
+  exports: 1 -> NvOptimusEnablement
