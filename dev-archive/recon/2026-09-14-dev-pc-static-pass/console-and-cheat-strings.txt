@@ -1,0 +1,9 @@
+.?AVAGDebugMenuTriggerNode@@
+AllocConsole
+FreeConsole
+GetConsoleWindow
+Not enough memory or resources on console sound ram. 
+SetConsoleScreenBufferSize
+Skew Cheat Disabled, reverting to Default Gravity.
+Skew Cheat Enabled!
+evControlCheat
