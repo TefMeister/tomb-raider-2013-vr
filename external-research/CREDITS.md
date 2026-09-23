@@ -12,3 +12,9 @@ are not, or you are a rights holder who wants something corrected or removed, em
 
 - vorpX forum contributors — https://www.vorpx.com/forums/
 - **koallalays**, Steam discussion — https://steamcommunity.com/app/203160/discussions/0/3382778848135176500/
+
+## Sources (2026-09-23)
+
+- **phunkaeg**, VR Modding Playbook — https://github.com/phunkaeg/vr-modding-playbook
+- **farmerarmor**, DeusExHRVR — https://github.com/farmerarmor/DeusExHRVR
+- **ModDB**, Crystal Dynamics engine page — https://www.moddb.com/engines/crystal-dynamics-engine
