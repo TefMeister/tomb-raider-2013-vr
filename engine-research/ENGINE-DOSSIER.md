@@ -61,6 +61,16 @@
   Reproduce with `flat-to-vr-RE-toolkit/tools/dxbc-reflect.py <shad-dump> find SceneBuffer`.
 - ⭐ **`StereoOffset` already exists in the shaders.** This game shipped in the 3D-Vision era and its renderer was built able to shift the view for an eye. ⚠️ **That proves the shaders have a stereo term; it proves nothing about whether anything still fills it.** The code that wrote it may be gone, disabled, or permanently zero in this 2022 patch build — **unchecked, and the first thing to check** `[hypothesis]`.
 - ⚠️ **`View` at +0 is a name, not a proof of contents.** `PrevViewProject` being explicitly a view-*projection* is weak evidence that plain `View` is view-only, but nothing here settles it. One frame, or the maths checked against a known camera, would.
+- **⭐ CHECKED 2026-09-28 (`/pd`, dev PC):** of the exe's 117 shaders, **31 declare `StereoOffset` and none reads
+  it**; **`View` (+0) is read by none either**. Screen position comes from `WorldBuffer` (`b0`) `ViewProject` (+128)
+  or `World` (+64) plus `SceneBuffer.__CameraPositionForCorrection` (+1184, camera-relative rendering)
+  `[inferred-static 2026-09-28, n=117]`. ⚠️ The `bigfile.*.tiger` shaders are unopened. The exe still carries **both
+  vendor stereo paths** — NVIDIA (`NvAPI_Stereo_IsEnabled`, `NvAPI_StereoSetDriverMode`) and **AMD HD3D**
+  (`AmdDxExtCreate11`, "Loading AMD HD3D driver.") — plus `StereoEnabled` / `StereoDepth` / `StereoStrength`
+  settings `[inferred-static 2026-09-28]`. So stereo was most likely CPU-driven (scene drawn twice), the route
+  farmerarmor's DeusExHRVR drives on the sibling Crystal engine (`/gr` inbox 2026-09-23, `[reported]`); geo-11 users
+  report re-enabling the 3D Vision path on the current build (`/sr` inbox 2026-09-17, `[reported]`, thread not
+  read). Note: `modding-notes/2026-09-28-pd-unpaused-stereooffset-is-unread-but-hd3d-is-there.md`.
 - The per-eye override maths (`K_eye = …`): not derived. ⚠️ **A deferred renderer complicates it** — lighting reconstructs world position from depth, so `DepthToWorld`, `DepthToView` and `InverseProjection` must move in step with any per-eye view shift. Not fatal, but more work than a forward renderer.
 
 ## 7. Constant-buffer fill mechanism
