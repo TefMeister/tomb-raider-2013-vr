@@ -106,3 +106,8 @@
 - ⚠️ **The renderer is not a static import**, so the injection route is less certain than for Witcher 2, Hard Reset or Dead Space 2. See §3.
 - ⚠️ **Deferred shading** means a per-eye view shift is not enough on its own; the depth-reconstruction terms must move with it.
 - 117 shaders is small for a game this size, so these are probably a core subset with the rest inside the `.tiger` archives. Unchecked.
+
+## Inbox folds, 2026-09-29
+
+**How TombRaiderVR switches on the shipped HD3D stereo path (`/gr` 2026-09-29).** The game's own stereo renderer draws the second eye (top-and-bottom in one double-height target, same frame); the mod wakes it with stand-in AMD driver-extension (`atidxx32.dll`) and ADL DLLs plus a `d3d11.dll` proxy that reports AMD's vendor ID on every adapter, so it works on NVIDIA/Intel; the in-game Stereo 3D option must be on; pinned to Steam build 9573671 `[reported]`. Hazards for any proxy of ours: a local `dxgi.dll` proxy never loads under Steam's overlay, and EOS's overlay can make a lazily-resolving `d3d11.dll` proxy recurse and drop the game to DX9 `[reported]`. ⚠️ The mod's repo was created 2026-09-19, not years ago as the board said. Topic: `external-research/topics/2026-09-29-tombraidervr-wakes-the-hd3d-path-with-a-fake-amd-driver.md`.
+
