@@ -18,3 +18,8 @@ are not, or you are a rights holder who wants something corrected or removed, em
 - **phunkaeg**, VR Modding Playbook — https://github.com/phunkaeg/vr-modding-playbook
 - **farmerarmor**, DeusExHRVR — https://github.com/farmerarmor/DeusExHRVR
 - **ModDB**, Crystal Dynamics engine page — https://www.moddb.com/engines/crystal-dynamics-engine
+
+## Sources (2026-09-29)
+
+- **farmerarmor**, TombRaiderVR — https://github.com/farmerarmor/TombRaiderVR
+- **effcol**, wiz3D (and the iZ3D project it builds on) — https://github.com/effcol/wiz3D
