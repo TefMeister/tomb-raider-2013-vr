@@ -107,6 +107,23 @@
 - ⚠️ **Deferred shading** means a per-eye view shift is not enough on its own; the depth-reconstruction terms must move with it.
 - 117 shaders is small for a game this size, so these are probably a core subset with the rest inside the `.tiger` archives. Unchecked.
 
+## ⭐ The built-in 3D mode, traced in the code (2026-09-30, `/pd`)
+
+`[inferred-static 2026-09-30]` throughout; note `modding-notes/2026-09-30-pd-how-the-built-in-3d-mode-works.md`.
+- **Switch:** `StereoEnabled` = byte at display-settings+0xa4 (`*(0x147c890)+0x720`; `StereoDepth` +0xa8,
+  `StereoStrength` +0xac), from HKCU via `0x644770`. **Mode query `0x641b40`**: 0 unless enabled; 1 = AMD HD3D,
+  4 = NVIDIA direct, 2/5 = 3D monitor.
+- **AMD:** tried only when the adapter vendor ID is 0x1002/0x1022 (`0x640a8a`); `0x641e40` loads `atidxx32.dll`,
+  `AmdDxExtCreate11`, then interface 2 (quad-buffer stereo) at device+0x1d0. This confirms TombRaiderVR's fake-AMD
+  route from the code.
+- **NVIDIA:** `NvAPI_Stereo_SetDriverMode(2)` = **direct mode** (`0x640ac3`); device+0x1d9 = loaded.
+- **Two-eye loop:** `0x627b28`: eye flag renderer+0xc1a = 1, `SetActiveEye(2)`, draw (`0x604100`); flag 0,
+  `SetActiveEye(1)`, draw.
+- **Per-eye projection:** `0x604df0(P, eye, sep, conv)` sets `P[2][0] = ∓sep/1000`, `P[3][0] = ±|conv|`; sep =
+  renderer+0xc08 (default 5.0), conv = +0xc0c (default 20.0) (`0x61668b`); called from `0x62a9ab`, `0x63394e`.
+- **VR route this opens:** wake the existing loop, replace `0x604df0`'s output with the headset's per-eye projection,
+  capture each eye after its draw `[hypothesis]`.
+
 ## Inbox folds, 2026-09-29
 
 **How TombRaiderVR switches on the shipped HD3D stereo path (`/gr` 2026-09-29).** The game's own stereo renderer draws the second eye (top-and-bottom in one double-height target, same frame); the mod wakes it with stand-in AMD driver-extension (`atidxx32.dll`) and ADL DLLs plus a `d3d11.dll` proxy that reports AMD's vendor ID on every adapter, so it works on NVIDIA/Intel; the in-game Stereo 3D option must be on; pinned to Steam build 9573671 `[reported]`. Hazards for any proxy of ours: a local `dxgi.dll` proxy never loads under Steam's overlay, and EOS's overlay can make a lazily-resolving `d3d11.dll` proxy recurse and drop the game to DX9 `[reported]`. ⚠️ The mod's repo was created 2026-09-19, not years ago as the board said. Topic: `external-research/topics/2026-09-29-tombraidervr-wakes-the-hd3d-path-with-a-fake-amd-driver.md`.
