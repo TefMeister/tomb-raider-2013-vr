@@ -1,0 +1,40 @@
+cbuffer SceneBuffer                      size  1200 bytes   (in 152 shaders)
+    +0     View                                           64 bytes  <- 4x4 matrix
+    +64    ScreenMatrix                                   64 bytes  <- 4x4 matrix
+    +128   DepthExportScale                                8 bytes
+    +144   FogParams                                      16 bytes  <- float4
+    +160   __CameraPosition                               12 bytes
+    +176   CameraDirection                                12 bytes
+    +192   DepthFactors                                   12 bytes
+    +208   ShadowDepthBias                                 8 bytes
+    +224   SubframeViewport                               16 bytes  <- float4
+    +240   DepthToWorld                                   48 bytes  <- 4x3 / 3x4 matrix
+    +288   DepthToView                                    16 bytes  <- float4
+    +304   OneOverDepthToView                             16 bytes  <- float4
+    +320   DepthToW                                       16 bytes  <- float4
+    +336   ClipPlane                                      16 bytes  <- float4
+    +352   ViewportDepthScaleOffset                        8 bytes
+    +368   ColorDOFDepthScaleOffset                        8 bytes
+    +384   TimeVector                                      8 bytes
+    +400   FogParams2                                     12 bytes
+    +416   GlobalAmbient                                  12 bytes
+    +432   GlobalParams                                  256 bytes
+    +688   ViewToFogH                                     16 bytes  <- float4
+    +704   ScreenExtents                                  16 bytes  <- float4
+    +720   ScreenResolution                                8 bytes
+    +736   PSSMToMap1Lin                                  16 bytes  <- float4
+    +752   PSSMToMap1Const                                16 bytes  <- float4
+    +768   PSSMToMap2Lin                                  16 bytes  <- float4
+    +784   PSSMToMap2Const                                16 bytes  <- float4
+    +800   PSSMToMap3Lin                                  16 bytes  <- float4
+    +816   PSSMToMap3Const                                16 bytes  <- float4
+    +832   PSSMDistances                                  16 bytes  <- float4
+    +848   WorldToPSSM0                                   64 bytes  <- 4x4 matrix
+    +912   PrevViewProject                                64 bytes  <- 4x4 matrix
+    +976   PrevWorld                                      64 bytes  <- 4x4 matrix
+    +1040  ViewT                                          64 bytes  <- 4x4 matrix
+    +1104  PSSMExtents                                    16 bytes  <- float4
+    +1120  ShadowAtlasResolution                          16 bytes  <- float4
+    +1136  UnitRimData                                    48 bytes  <- 4x3 / 3x4 matrix
+    +1184  __CameraPositionForCorrection                  12 bytes
+
