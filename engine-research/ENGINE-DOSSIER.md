@@ -107,6 +107,15 @@
 - ⚠️ **Deferred shading** means a per-eye view shift is not enough on its own; the depth-reconstruction terms must move with it.
 - 117 shaders is small for a game this size, so these are probably a core subset with the rest inside the `.tiger` archives. Unchecked.
 
+**2026-10-01 (`/pd`): the `.tiger` shaders do not read `StereoOffset` either.** All 171,698 CDRM containers in
+`bigfile.000–003.tiger` inflated with no error (`dev-archive/tools/tiger_cdrm_scan.py`): 25,047 DXBC shaders, 0 that
+declare `StereoOffset` `[inferred-static 2026-10-01, n=25047]`. The material shaders' `SceneBuffer` is a smaller,
+1,200-byte layout (`View` +0, `ScreenMatrix` +64, `__CameraPosition` +160, `CameraDirection` +176, `DepthToWorld`
++240, PSSM cascades, `PrevViewProject` +912, `ViewT` +1040, `__CameraPositionForCorrection` +1184) with no stereo
+term `[inferred-static 2026-10-01]`. So the per-eye shift of the built-in 3D mode lives on the CPU side (the projection
+edit at `0x604df0`), which is the hook route; nothing per eye needs patching in the shaders. Layout:
+`dev-archive/recon/2026-10-01-tiger-shaders/`.
+
 ## ⭐ The built-in 3D mode, traced in the code (2026-09-30, `/pd`)
 
 `[inferred-static 2026-09-30]` throughout; note `modding-notes/2026-09-30-pd-how-the-built-in-3d-mode-works.md`.
