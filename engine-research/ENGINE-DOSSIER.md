@@ -107,6 +107,12 @@
 - ⚠️ **Deferred shading** means a per-eye view shift is not enough on its own; the depth-reconstruction terms must move with it.
 - 117 shaders is small for a game this size, so these are probably a core subset with the rest inside the `.tiger` archives. Unchecked.
 
+**2026-10-01 (`/pd`): farmerarmor's TombRaiderVR independently uses the same hook points** `[reported]`: the per-eye
+projection function `0x604df0` (offset `0x204df0`), eye flag renderer `+0xc1a`, render device base + `0x1712270`;
+and adds renderer `+0xc19` (native stereo on), `+0xb62` (projection dirty), `+0xa90`/`+0x990` (projection override /
+fallback), scene creation `0x21c8b0`, draw `0x223bc0`, HUD matrix `0x238a90`, gameplay camera build `0xf69a0`.
+Rotation-only, no controllers, separate host process. Note `modding-notes/2026-10-01-pd-farmerarmors-tombraidervr-read.md`.
+
 **2026-10-01 (`/pd`): the `.tiger` shaders do not read `StereoOffset` either.** All 171,698 CDRM containers in
 `bigfile.000–003.tiger` inflated with no error (`dev-archive/tools/tiger_cdrm_scan.py`): 25,047 DXBC shaders, 0 that
 declare `StereoOffset` `[inferred-static 2026-10-01, n=25047]`. The material shaders' `SceneBuffer` is a smaller,
