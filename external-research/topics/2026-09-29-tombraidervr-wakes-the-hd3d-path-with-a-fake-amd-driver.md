@@ -52,6 +52,21 @@ first release commit is dated the same day `[measured 2026-09-29, GitHub API]`, 
 ten days old, not years old. The un-pause decision is Tefa's and this does not change it; it only
 means the mod is young and actively moving (commits on 09-19, 09-22, 09-26).
 
+## 2026-10-04: checked against the whole repo — BOTH mechanisms are real
+
+The 2026-10-01 `/pd` read (README, `EngineDisplay.cpp`, `EngineCamera.cpp`, `Host.cpp`) found no AMD code and
+filed a correction, but said itself that `vendor/`, `tools/` and the history were not checked. They are now:
+
+- `vendor/` holds three stand-ins, **built and installed**: `CMakeLists.txt` builds `atidxx32` (AMD quad-buffer
+  proxy), `atiadlxy` (ADL proxy) and `d3d11_proxy` (adapter vendor-ID proxy), and `install.ps1` copies
+  `d3d11.dll`, `atidxx32.dll` and `atiadlxy.dll` into the game `[reported 2026-10-04, GitHub API, main as of
+  2026-09-26]`. `THIRD_PARTY_NOTICES.md` says these derive from effcol's wiz3D (LGPL 2.1).
+- The `/pd` read is also right: the mod hooks the per-eye projection function (`0x204df0`) and sets the renderer's
+  stereo and eye flags (`+0xc19`, `+0xc1a`) `[reported]`.
+
+So the fake AMD driver is how the game is persuaded its HD3D path is available; the projection hook and the flags
+are how the mod then drives the two eyes. This topic's title stands; the 2026-10-01 correction is withdrawn.
+
 ## Next step
 
 Static, `[PD]`: in `TombRaider.exe`, find the call site that loads the AMD driver-extension DLL and
