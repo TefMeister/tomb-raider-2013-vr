@@ -112,6 +112,7 @@ projection function `0x604df0` (offset `0x204df0`), eye flag renderer `+0xc1a`, 
 and adds renderer `+0xc19` (native stereo on), `+0xb62` (projection dirty), `+0xa90`/`+0x990` (projection override /
 fallback), scene creation `0x21c8b0`, draw `0x223bc0`, HUD matrix `0x238a90`, gameplay camera build `0xf69a0`.
 Rotation-only, no controllers, separate host process. Note `modding-notes/2026-10-01-pd-farmerarmors-tombraidervr-read.md`.
+**Corrected 2026-10-08:** TombRaiderVR ALSO ships the stand-in AMD DLLs (`vendor/`: `atidxx32`, `atiadlxy`, a `d3d11` proxy; from effcol's wiz3D, LGPL 2.1) `[reported 2026-10-04]`; the 10-01 read missed that folder. Both halves together are its route; the §"Inbox folds, 2026-09-29" paragraph stands.
 
 **2026-10-01 (`/pd`): the `.tiger` shaders do not read `StereoOffset` either.** All 171,698 CDRM containers in
 `bigfile.000–003.tiger` inflated with no error (`dev-archive/tools/tiger_cdrm_scan.py`): 25,047 DXBC shaders, 0 that
@@ -131,7 +132,7 @@ edit at `0x604df0`), which is the hook route; nothing per eye needs patching in 
 - **AMD:** tried only when the adapter vendor ID is 0x1002/0x1022 (`0x640a8a`); `0x641e40` loads `atidxx32.dll`,
   `AmdDxExtCreate11`, then interface 2 (quad-buffer stereo) at device+0x1d0. This confirms TombRaiderVR's fake-AMD
   route from the code.
-- **NVIDIA:** `NvAPI_Stereo_SetDriverMode(2)` = **direct mode** (`0x640ac3`); device+0x1d9 = loaded.
+- **NVIDIA:** `NvAPI_Stereo_SetDriverMode(2)` = **direct mode** at `0x640689` (sets device+0x1d8); `0x640ac3` creates the handle, calls `SetActiveEye(LEFT)` and the notification, then device+0x1d9 = loaded (corrected 2026-10-08; the 09-30 read put SetDriverMode at `0x640ac3`).
 - **Two-eye loop:** `0x627b28`: eye flag renderer+0xc1a = 1, `SetActiveEye(2)`, draw (`0x604100`); flag 0,
   `SetActiveEye(1)`, draw.
 - **Per-eye projection:** `0x604df0(P, eye, sep, conv)` sets `P[2][0] = ∓sep/1000`, `P[3][0] = ±|conv|`; sep =
@@ -143,3 +144,17 @@ edit at `0x604df0`), which is the hook route; nothing per eye needs patching in 
 
 **How TombRaiderVR switches on the shipped HD3D stereo path (`/gr` 2026-09-29).** The game's own stereo renderer draws the second eye (top-and-bottom in one double-height target, same frame); the mod wakes it with stand-in AMD driver-extension (`atidxx32.dll`) and ADL DLLs plus a `d3d11.dll` proxy that reports AMD's vendor ID on every adapter, so it works on NVIDIA/Intel; the in-game Stereo 3D option must be on; pinned to Steam build 9573671 `[reported]`. Hazards for any proxy of ours: a local `dxgi.dll` proxy never loads under Steam's overlay, and EOS's overlay can make a lazily-resolving `d3d11.dll` proxy recurse and drop the game to DX9 `[reported]`. ⚠️ The mod's repo was created 2026-09-19, not years ago as the board said. Topic: `external-research/topics/2026-09-29-tombraidervr-wakes-the-hd3d-path-with-a-fake-amd-driver.md`.
 
+## ⭐ The VR build's wake-up route: the NVIDIA path through a stand-in nvapi.dll (2026-10-08, `/pd`)
+
+`[inferred-static 2026-10-08]`; note `modding-notes/2026-10-08-pd-the-vr-build-wakes-the-nvidia-path.md`.
+- **Chosen:** answer the game's 3D Vision calls with our `nvapi.dll` (the Hard Reset pattern). No exe patch to wake
+  stereo; the game's `SetActiveEye` calls give our picture dll each eye's boundary (`trvr_on_active_eye`). AMD route
+  rejected (vendor-id lie + quad-buffer stand-in, AMD cards only); flag-forcing kept as the fallback.
+- **The exe looks up 19 NvAPI functions.** The chain: Initialize -> `[0x1b12661]`; IsEnabled -> SetDriverMode(2) ->
+  device+0x1d8; CreateHandle -> SetActiveEye(LEFT) -> SetNotificationMessage(window, 3000) -> device+0x1d9; mode 4
+  needs the setting byte and both device bytes. **Per frame IsActivated -> device+0xe8** (the game copies the answer,
+  unlike Hard Reset), so the stand-in answers 1.
+- **Eye order:** the loop sets eye flag 1 with `SetActiveEye(2)` = NVIDIA's LEFT, draws, then flag 0 with RIGHT (1)
+  (`nvapi_lite_stereo.h`: RIGHT = 1, LEFT = 2). So **renderer+0xc1a = 1 is the left eye, drawn first**.
+- **Built, not installed:** `staging/tomb-raider-2013-vr/proxy-nvapi` `1ae3c9b7cc4e` `[compile-verified 2026-10-08]`,
+  self-test 63/63 in four modes `[verified-numerically 2026-10-08]`. The game has never been launched on either PC.
