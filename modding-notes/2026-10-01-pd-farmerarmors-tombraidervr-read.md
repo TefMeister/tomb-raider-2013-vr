@@ -43,3 +43,6 @@ The `/gr` topic of 2026-09-29 says the mod wakes the HD3D path with a stand-in A
 source files read do not mention AMD, HD3D, `atidxx32` or ADL; they drive stereo by hooking the projection function
 and setting the native stereo flag directly. Whether the AMD stand-in exists elsewhere in the repo (e.g. `vendor/`)
 was not checked. Sent to the research lane as an inbox note.
+
+**Correction 2026-10-08 (from `/gr` 2026-10-04, `inbox/2026-10-04-gr-tombraidervr-uses-both-amd-stand-ins-and-a-projection-hook.md`):
+TombRaiderVR uses BOTH halves: the stand-in AMD DLLs in `vendor/` (built by its CMake, copied by `install.ps1`) AND the projection hook with the stereo/eye flags. This note read four files and missed `vendor/`; its "no fake AMD driver visible" is withdrawn `[reported 2026-10-04]`.
