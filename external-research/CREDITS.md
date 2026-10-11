@@ -23,3 +23,9 @@ are not, or you are a rights holder who wants something corrected or removed, em
 
 - **farmerarmor**, TombRaiderVR — https://github.com/farmerarmor/TombRaiderVR
 - **effcol**, wiz3D (and the iZ3D project it builds on) — https://github.com/effcol/wiz3D
+
+## Sources (2026-10-11)
+
+- **Gamewatcher**, the Epic Online Services change to the rebooted trilogy — https://www.gamewatcher.com/news/rebooted-tomb-raider-trilogy-epic-online-services-link-steam-egs-accounts
+- **Steam Community** Tomb Raider discussion contributors — https://steamcommunity.com/app/203160/discussions/0/3111416678613474661
+- **Nixxes**, for the public answer quoted there
