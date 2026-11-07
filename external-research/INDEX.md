@@ -1,6 +1,8 @@
 # Research index
 
-**Last `/gr` pass: 2026-10-26 — CHECK-IN.** Inbox empty; board unchanged since 10-08. farmerarmor's TombRaiderVR unchanged since v0.1.1 (2026-09-26). One search for the stand-in row: HelixVision users played the game's own 3D Vision path in a headset in 2020 with no shader fix, launched through the game's pop-up launcher; one topic.
+**Last `/gr` pass: 2026-11-07 (estate sweep) — CHECK-IN.** Inbox empty; farmerarmor's TombRaiderVR unchanged since v0.1.1 (2026-09-26), and one search found no other VR mod for the 2013 game (only ports of the 1996 original). Nothing new.
+
+_Previous: **Last `/gr` pass: 2026-10-26 — CHECK-IN.** Inbox empty; board unchanged since 10-08. farmerarmor's TombRaiderVR unchanged since v0.1.1 (2026-09-26). One search for the stand-in row: HelixVision users played the game's own 3D Vision path in a headset in 2020 with no shader fix, launched through the game's pop-up launcher; one topic._
 
 _Previous: **Last `/gr` pass: 2026-10-11 (estate sweep) — CHECK-IN.** Inbox empty. The Epic sign-in prompt the first [FLAT] row watches for is a public 2021 change with two documented ways round it (unlink the accounts; pre-EOS beta branch); pointer dropped to engine-research/inbox._
 
