@@ -1,6 +1,8 @@
 # Research index
 
-**Last `/gr` pass: 2026-11-07 (estate sweep) — CHECK-IN.** Inbox empty; farmerarmor's TombRaiderVR unchanged since v0.1.1 (2026-09-26), and one search found no other VR mod for the 2013 game (only ports of the 1996 original). Nothing new.
+**Last `/gr` pass: 2026-11-14 (check-ins beside the Keeper's sweep of the same day) — CHECK-IN.** Inbox empty; one search found nothing new for the 2013 game (results were Team Beef's port of the 1996 game). Nothing new.
+
+_Previous: **Last `/gr` pass: 2026-11-07 (estate sweep) — CHECK-IN.** Inbox empty; farmerarmor's TombRaiderVR unchanged since v0.1.1 (2026-09-26), and one search found no other VR mod for the 2013 game (only ports of the 1996 original). Nothing new._
 
 _Previous: **Last `/gr` pass: 2026-10-26 — CHECK-IN.** Inbox empty; board unchanged since 10-08. farmerarmor's TombRaiderVR unchanged since v0.1.1 (2026-09-26). One search for the stand-in row: HelixVision users played the game's own 3D Vision path in a headset in 2020 with no shader fix, launched through the game's pop-up launcher; one topic._
 
